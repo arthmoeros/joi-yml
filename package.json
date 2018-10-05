@@ -1,0 +1,32 @@
+{
+  "name": "joi-yml",
+  "version": "0.0.0",
+  "description": "A wrapper library for joi-json using yml files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthmoeros/joi-yml.git"
+  },
+  "keywords": [
+    "joi",
+    "joi-json",
+    "yml",
+    "json-schema",
+    "schema",
+    "validation"
+  ],
+  "author": "arthmoeros",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/arthmoeros/joi-yml/issues"
+  },
+  "homepage": "https://github.com/arthmoeros/joi-yml#readme",
+  "dependencies": {
+    "joi": "^13.7.0",
+    "joi-json": "^2.1.0",
+    "js-yaml": "^3.12.0"
+  }
+}
