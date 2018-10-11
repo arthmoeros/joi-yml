@@ -33,7 +33,9 @@ function searchNode(node, currentPath){
     }
 }
 
-let parsed = parseYml('./test/main.yml');
-let schema = builder.build(parsed);
+function getBuilt(ymlFile){
+    return builder.build(parseYml(ymlFile) || {});
+}
 
-console.log(schema);
+module.exports.parseYml = parseYml;
+module.exports.getBuilt = getBuilt;
