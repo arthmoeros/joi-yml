@@ -1,6 +1,6 @@
 {
   "name": "joi-yml",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A wrapper library for joi-json using yml files",
   "main": "index.js",
   "scripts": {

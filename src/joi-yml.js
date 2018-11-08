@@ -5,7 +5,7 @@ const builder = require('joi-json').builder();
 
 function parseYml(ymlFile){
     let currentPath = path.resolve(ymlFile);
-    currentPath = currentPath.substring(0, currentPath.lastIndexOf('/'));
+    currentPath = path.dirname(currentPath);
     if(!fs.existsSync(ymlFile)){
         throw new Error(`Yaml file ${ymlFile} not found`);
     }
@@ -21,8 +21,8 @@ function searchNode(node, currentPath){
         if(typeof(node[key]) === 'string' && node[key].startsWith('object:')){
             let required = node[key].endsWith('required');
             let refPath = required ? 
-                `${currentPath}/${node[key].substring(7, node[key].length - 9)}`
-                : `${currentPath}/${node[key].substring(7)}`;
+                path.join(currentPath,node[key].substring(7, node[key].length - 9))
+                : path.join(currentPath,node[key].substring(7));
             node[key] = parseYml(refPath);
             if(required){
                 node[key]['@required'] = true;
